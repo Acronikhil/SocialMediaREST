@@ -12,8 +12,13 @@ import com.example.demo.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-	@Query("from User u where u.userName=:name")
-	public List<User> findByName(@Param(value="name")String name);
+	
+	public List<User> findByUserName(String name);
+	
+	@Query("from User u where u.userId=:userId")
+	public User findByUserId(Integer userId);
+	
+	public User findByEmail(String email);
 	
 	public void deleteByUserName(String userName);
 	

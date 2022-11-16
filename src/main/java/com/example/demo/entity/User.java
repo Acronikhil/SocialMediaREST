@@ -54,8 +54,4 @@ public class User {
 	@JsonIgnore
 	private Comments commenter;
 
-	
-	
-	
-
 }

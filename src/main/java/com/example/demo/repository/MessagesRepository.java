@@ -7,5 +7,9 @@ import com.example.demo.entity.Messages;
 
 @Repository
 public interface MessagesRepository extends JpaRepository<Messages, Integer> {
+	
+	public Messages findMessageBySenderUserId(Integer userId);
+	
+	public Messages findMessageByMessageId(Integer id);
 
 }

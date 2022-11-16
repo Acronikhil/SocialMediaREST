@@ -22,9 +22,12 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> getUserByName(String name) {
-
-		System.out.println(userRepository.findByName(name));
-		return userRepository.findByName(name);
+		List<User> userList =  userRepository.findByUserName(name);
+		if(userList.isEmpty()) {
+			throw new NullPointerException("No User Exists With This Name: "+ name);
+		}
+		System.out.println(userRepository.findByUserName(name));
+		return userList;
 	}
 
 	@Override
